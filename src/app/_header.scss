@@ -1,0 +1,38 @@
+.page-layout__viewport {
+  padding-top: 4rem;
+}
+
+.header-image {
+    background-color: $brand-black;
+    margin-bottom: -60px;
+
+    img {
+        margin: auto;
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+    }
+}
+
+// ================================
+//   NAVBAR
+// ================================
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    color: $brand-white;
+    font-size: 25px;
+
+    &:hover {
+        color: $brand-white;
+        font-size: 28px;
+    }
+}
+
+.nav-link-active {
+  font-weight: bold;
+  color: $brand-gold;
+}
