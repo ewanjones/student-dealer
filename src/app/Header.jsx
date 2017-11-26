@@ -7,7 +7,7 @@ import HeaderImage from '../static/images/header.png'
 class Header extends Component {
     render() {
         return (
-            <div className='container-fluid text-center'>
+            <div className='container-fluid text-center header'>
                 <div className={'row header-image'}>
                     <img alt='The Student Dealer' src={HeaderImage} />
                 </div>

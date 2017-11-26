@@ -1,10 +1,17 @@
 .card {
-    background-color: yellow;
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    background-color: $gray;
 }
 
 img {
-    width: 300px;
+    width: 100%;
     height: auto;
     float: left;
-    margin: 10px;
+}
+
+.description {
+    color: $gray;
+    font-style: italic;
 }

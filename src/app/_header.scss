@@ -2,14 +2,23 @@
   padding-top: 4rem;
 }
 
+.header {
+    padding-bottom: 20px;
+
+    // gradient
+    background: $brand-black; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient($brand-black 90%, #FFFFFE00); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient($brand-black 90%, #FFFFFE00); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($brand-black 90%, #FFFFFE00); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($brand-black 90%, #FFFFFE00); /* Standard syntax */
+}
+
 .header-image {
-    background-color: $brand-black;
-    margin-bottom: -60px;
+    margin-bottom: -30px;
 
     img {
         margin: auto;
-        width: 100%;
-        max-width: 900px;
+        max-width: 400px;
         height: auto;
     }
 }
@@ -19,16 +28,15 @@
 // ================================
 
 .navbar {
-    margin-bottom: 20px;
+
 }
 
 .nav-link {
     color: $brand-white;
-    font-size: 25px;
+    font-size: 20px;
 
     &:hover {
         color: $brand-white;
-        font-size: 28px;
     }
 }
 
