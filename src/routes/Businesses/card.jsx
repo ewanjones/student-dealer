@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import TamperImg from '../../static/images/tamper.jpg'
-
+// import _grid from '~/bootstrap/lib/grid.scss'
 
 import _style from './_card.scss'
+
 
 class Card extends Component {
     render() {
         return (
-            <div className={'container card'}>
-                <div className={'row no-gutter'}>
+            <div className={'card'}>
+                <div className={'row'}>
                     <div className={'col-sm-5'}>
                         <img
                             alt={'Tamper'}

@@ -138,6 +138,21 @@ module.exports = {
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
         oneOf: [
+          // SASS LOADER
+          {
+              test: /\.scss$/,
+              use: [
+                  "style-loader",
+                  "css-loader",
+                  "sass-loader",
+                  {
+                      loader: 'sass-resources-loader',
+                      options: {
+                          resources: [inProject('src/styles/_variables.scss')]
+                      }
+                  }
+              ]
+          },
           // "url" loader works like "file" loader except that it embeds assets
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
@@ -161,21 +176,6 @@ module.exports = {
               // directory for faster rebuilds.
               cacheDirectory: true,
             },
-          },
-          // SASS LOADER
-          {
-              test: /\.scss$/,
-              use: [
-                  "style-loader",
-                  "css-loader",
-                  "sass-loader",
-                  {
-                      loader: 'sass-resources-loader',
-                      options: {
-                          resources: [inProject('src/styles/_variables.scss')]
-                      }
-                  }
-              ]
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.

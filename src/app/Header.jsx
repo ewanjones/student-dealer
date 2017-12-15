@@ -7,12 +7,12 @@ import HeaderImage from '../static/images/header.png'
 class Header extends Component {
     render() {
         return (
-            <div className='container-fluid text-center header'>
-                <div className={'row header-image'}>
+            <div className='header'>
+                <span className={'header-image'}>
                     <img alt='The Student Dealer' src={HeaderImage} />
-                </div>
+                </span>
 
-                <div className={'container-fluid col-md-10 navbar'}>
+                <span className={'navbar'}>
                     <NavLink
                             exact
                             to='/'
@@ -41,7 +41,7 @@ class Header extends Component {
                             activeClassName={'nav-link-active'}>
                         Our mission
                     </NavLink>
-                </div>
+                </span>
             </div>
         )
     }
