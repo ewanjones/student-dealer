@@ -9,14 +9,13 @@
         <title>Student Dealer</title>
         <meta name="description" content="The Student Dealer">
         <meta name="Ewan Jones">
-        {% render_bundle 'main' 'css' %}
-
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->
     </head>
 
     <body>
-        {% render_bundle 'main' 'js' %}
+        <div id="root"></div>
+        {% render_bundle 'main' %}
     </body>
 </html>
