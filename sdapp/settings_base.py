@@ -23,10 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '@5hx7$^r7qeg@1jc=7balow4-8jnndme%+@vva=z#6u^j^6xdu'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -47,14 +45,15 @@ INSTALLED_APPS = [
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
+
 )
-# STATIC_ROOT = 'static',
+# STATIC_ROOT = 'static/',
 # STATIC_URL = '/static/'
 
 
 WEBPACK_LOADER = {
     'DEFAULT': {
-        'CACHE': not DEBUG,
+        'CACHE': False,
         'BUNDLE_DIR_NAME': 'bundles/', # must end with slash
         'STATS_FILE': os.path.join(BASE_DIR, 'assets/webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
