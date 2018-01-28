@@ -46,6 +46,8 @@ class Authentication(View):
         ip.save()
         # update user with ip
         user.ipaddress_set.add(ip)
+        
+        request.session['user_id'] = user.id
 
         response = {
             'status': 'success',
@@ -79,7 +81,25 @@ class Authentication(View):
                 'status': 'failed',
                 'message': 'user could not be found'
             }
+
+            
+        request.session['user_id'] = user.id
+
         return JsonResponse(request, response)
+
+
+    def logout(request):
+        try:
+            del request.session['user_id']
+        except KeyError:
+            pass
+
+        response = {
+            'status': 'success',
+            'message': 'logged in successfully'
+        }
+
+        return JsonRepsonse(request, response)
 
 
 
