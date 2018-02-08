@@ -24,7 +24,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@5hx7$^r7qeg@1jc=7balow4-8jnndme%+@vva=z#6u^j^6xdu'
 
 
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -43,12 +42,15 @@ INSTALLED_APPS = [
     'webapp.apps.WebappConfig'
 ]
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets'),
-
-)
-STATIC_ROOT = 'static/',
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
+# )
+# STATIC_ROOT = '/static/',
 # STATIC_URL = '/static/'
+
+AUTH_USER_MODEL = 'api.User'
+
 
 
 WEBPACK_LOADER = {
@@ -67,7 +69,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -132,4 +134,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-

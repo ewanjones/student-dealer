@@ -6,8 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 
 import json
 
-from .models import Business, IPAddress
-from django.contrib.auth.models import User
+from .models import Business, IPAddress, User, Deal
 
 
 def index(request):
@@ -36,18 +35,26 @@ class Authentication(View):
         last_name = request.POST.get('last_name')
 
         # create user object
-        user = User.objects.create_user(email, email, None)
+        user = User.objects.create_user(email=email, first_name=first_name, last_name=last_name )
         user.first_name = first_name
         user.last_name = last_name
+        user.save()
+
+        print(user.id)
 
         # get users IP and store this
-        user_ip = get_user_ip(request)
-        ip = IPAddress(ip=ip, user=user)
-        ip.save()
-        # update user with ip
-        user.ipaddress_set.add(ip)
-        
+        # user_ip = get_user_ip(request)
+        # ip = IPAddress(ip=ip, user=user)
+        # ip.save()
+        # # update user with ip
+        # user.ipaddress_set.add(ip)
+
         request.session['user_id'] = user.id
+
+        user_object = {
+            'name': user.first_name,
+            'email': user.email
+        }
 
         response = {
             'status': 'success',
@@ -59,22 +66,22 @@ class Authentication(View):
     def login(request):
         email = request.POST.get('email')
         user = authenticate(request, email=email)
-        user_ip = get_user_ip(request)
+        # user_ip = get_user_ip(request)
 
         response = {}
         if user is not None:
             login(request, user)
 
             # check for user ip
-            user_ip_list = user.ip_set
-            try:
-                user_ip_list.objects.get(ip=user_ip)
-            except:
-                user.ip_set.add(user_ip)
+            # user_ip_list = user.ip_set
+            # try:
+            #     user_ip_list.objects.get(ip=user_ip)
+            # except:
+            #     user.ip_set.add(user_ip)
 
             response = {
                 'status': 'success',
-                'email': user.email
+                'email': 'ewan'
             }
         else:
             response = {
@@ -82,10 +89,10 @@ class Authentication(View):
                 'message': 'user could not be found'
             }
 
-            
-        request.session['user_id'] = user.id
 
-        return JsonResponse(request, response)
+        # request.session['user_id'] = user.id
+
+        return JsonResponse(response, safe=False)
 
 
     def logout(request):
@@ -110,7 +117,7 @@ class Authentication(View):
 class BusinessView(View):
     def get(self, request):
         businesses = Business.objects.all().values()
-        result = {'items': []}
+        result = {'status': 'success', 'items': []}
 
         for b in businesses:
             result['items'].append(b)
@@ -121,7 +128,7 @@ class BusinessView(View):
 class DealView(View):
     def get(self, request):
         deals = Business.objects.all().values()
-        result = {'items': []}
+        result = {'status': 'success', 'items': []}
 
         for d in deals:
             result['items'].append(d)
