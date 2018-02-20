@@ -3,4 +3,4 @@ from django.http import HttpResponse, JsonResponse
 
 
 def index(request):
-    return render(request, 'webapp/reactapp.html')
+    return render(request, 'webapp/index.html')
