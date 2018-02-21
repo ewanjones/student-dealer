@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>The Student Dealer</title>
+    <meta name="description" content="The Student Dealer">
+
+    <link rel="stylesheet" href="{% static 'webapp/styles/global.css' %}">
+    <link rel="stylesheet" href="{% static 'webapp/styles/base.css' %}">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="nav-item">
+            <a href="">
+                Home
+            </a>
+        </div>
+    </div>
+
+    {% block body %}{% endblock %}
+
+    {% bloack extrajs %}{% endblock %}
+
+</body>
+</html>

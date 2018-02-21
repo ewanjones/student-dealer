@@ -42,7 +42,7 @@ INSTALLED_APPS = [
 
 
 # custom user model
-AUTH_USER_MODEL = 'api.User'
+AUTH_USER_MODEL = 'auth.User'
 AUTHENTICATION_BACKENDS = (
     'auth.backends.UserAuthenticationBackend'
 )

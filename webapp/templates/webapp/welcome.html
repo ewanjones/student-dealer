@@ -1,0 +1,23 @@
+{% load static %}
+{% extend base.html %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'webapp/styles/welcome.css' %}">
+{% endblock %}
+
+
+{% block body %}
+    <div class="header">
+        <div class="nav-item">
+            <a href="">
+                Home
+            </a>
+        </div>
+    </div>
+
+    <div class="main">
+        <img class="logo" src="{% static 'webapp/images/insta.png' %}"/>
+        <h2>Get the app!</h2>
+    </div>
+{% endblock %}
