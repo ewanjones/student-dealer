@@ -4,18 +4,6 @@ from django.utils.timezone import now
 
 from django.contrib.auth.models import User
 
-class User(AbstractUser):
-    id = models.AutoField(primary_key=True)
-    email = models.EmailField()
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    area = models.CharField(max_length=50, null=True)
-    date_joined = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return self.id
-
-
 class Business(models.Model):
     id = models.AutoField(primary_key=True)
     # image = models.FileField()

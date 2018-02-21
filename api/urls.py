@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^deals$', views.DealView.as_view(), name='deal'),
 
     # authentication
-    url(r'^user/login$', views.Authentication.login, name='login'),
-    url(r'^user/signup$', views.Authentication.signup, name='signup'),
+    url(r'^user/auth$', views.authenticate, name='auth'),
+    # url(r'^user/signup$', views.Authentication.signup, name='signup'),
     # url('', views.index, name='api')
 ]

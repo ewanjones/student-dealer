@@ -45,15 +45,15 @@ This endpoint returns a list of businesses in the form:
 }
 ```
 
-### /api/user/
-Users are only authenticated with email and their IP address is stored and linked with their account.
+### /auth/
+Users are only authenticated with email.
+Please cache this user to allow them to continue to use the site/app
 **CSRF cookies will need be implemented soon!**
 
 **Input**
 ```
 {
     email:
-    first_name:
-    last_name:
+    name:
 }
 ```

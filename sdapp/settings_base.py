@@ -41,20 +41,12 @@ INSTALLED_APPS = [
 ]
 
 
+# custom user model
 AUTH_USER_MODEL = 'api.User'
+AUTHENTICATION_BACKENDS = (
+    'auth.backends.UserAuthenticationBackend'
+)
 
-
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'CACHE': False,
-        'BUNDLE_DIR_NAME': 'bundles/', # must end with slash
-        'STATS_FILE': os.path.join(BASE_DIR, 'assets/webpack-stats.json'),
-        'POLL_INTERVAL': 0.1,
-        'TIMEOUT': None,
-        'IGNORE': ['.+\.hot-update.js', '.+\.map']
-    }
-}
 
 
 MIDDLEWARE = [
