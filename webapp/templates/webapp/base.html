@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="{% static 'webapp/styles/global.css' %}">
     <link rel="stylesheet" href="{% static 'webapp/styles/base.css' %}">
+    {% block css %}{% endblock %}
 
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -26,9 +27,11 @@
         </div>
     </div>
 
-    {% block body %}{% endblock %}
+    <div class="main">
+        {% block body %}{% endblock %}
+    </div>
 
-    {% bloack extrajs %}{% endblock %}
+    {% block extrajs %}{% endblock %}
 
 </body>
 </html>

@@ -1,0 +1,55 @@
+.background {
+    font-family: Lucida Sans Typewriter;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+
+    text-align: center;
+}
+
+.logo {
+    margin: 40px;
+    height: 200px;
+}
+
+.welcome-text {
+    color: #e0cd1d;
+    font-size: 30px;
+}
+
+
+/* email input */
+
+.email {
+    display: flex;
+    text-align: left;
+    margin: 30px auto;
+    width: 80%;
+    height: 40px;
+    max-width: 400px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0 grey;
+
+}
+
+.email > input {
+    margin: 0;
+    padding: 5px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.email > button {
+    margin: 0;
+    height: 100%;
+    width: 80px;
+    font-size: 17px;
+    border: none;
+    background: #e0cd1d;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

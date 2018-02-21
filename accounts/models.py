@@ -22,13 +22,13 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    uid = models.primaryKey()
-    name = models.charField()
-    email = models.charField()
-    uni = models.charField()
+    uid = models.AutoField(primary_key=True)
+    email = models.EmailField(max_length=100)
+    name = models.CharField(max_length=50)
+    uni = models.CharField(max_length=50)
 
     is_active = models.BooleanField(default=False)
-    date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
+    date_joined = models.DateTimeField('date joined', auto_now_add=True)
 
     USERNAME_FIELD = 'email'
 

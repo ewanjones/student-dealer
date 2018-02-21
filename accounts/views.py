@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 
-from auth.models import User
-from django.auth.backends import authenticate
+from accounts.models import User
+from django.contrib.auth import authenticate
 
 
 # not a public method!
@@ -33,5 +33,5 @@ def authenticate(request):
         'status': 'success',
         'body': user_object
     }
-    
+
     return JsonResponse(request, response)

@@ -1,15 +1,3 @@
-/* MAIN */
-
-.main {
-    position: relative;
-    z-index: 1;
-    top: 60px;
-    width: 100%;
-    height: 400px;
-    background-color: white;
-    text-align: center;
-}
-
 .logo {
     position: absolute;
     left: 50%;
