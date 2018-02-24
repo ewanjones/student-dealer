@@ -17,7 +17,7 @@ from django.contrib.auth import authenticate
 #     return ip
 
 
-def authenticate(request):
+def auth_user(request):
     email = request.POST.get('email')
     name = request.POST.get('name')
 

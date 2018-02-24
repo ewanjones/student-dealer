@@ -3,5 +3,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^auth/$', views.authenticate, name='auth'),
+    url(r'^auth/$', views.auth_user, name='auth'),
 ]
