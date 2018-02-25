@@ -1,0 +1,18 @@
+/* logo colour - #282525 */
+/* gold - #e0cd1d */
+
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(124, 124, 122, 0.4);
+    font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px;
+}

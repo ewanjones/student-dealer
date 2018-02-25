@@ -1,4 +1,4 @@
-django
+django==2.0.0
 libsass
 django-sass-processor
 psycopg2
