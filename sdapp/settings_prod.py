@@ -16,8 +16,6 @@ DATABASES = {
 }
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sdapp.settings_prod')
-
