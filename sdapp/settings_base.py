@@ -44,9 +44,9 @@ INSTALLED_APPS = [
 
 # custom user model
 AUTH_USER_MODEL = 'auth.User'
-AUTHENTICATION_BACKENDS = (
-    'auth.backends.UserAuthenticationBackend'
-)
+AUTHENTICATION_BACKENDS = [
+    'accounts.backends.UserAuthenticationBackend'
+]
 
 
 

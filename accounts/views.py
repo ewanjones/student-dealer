@@ -23,15 +23,16 @@ def auth_user(request):
 
     # get user object
     user = authenticate(email=email, name=name)
+    login(request, user)
 
     user_object = {
-        'name': user.name,
-        'email': user.email
+        "name": user.name,
+        "email": user.email
     }
 
     response = {
-        'status': 'success',
-        'body': user_object
+        "status": "success",
+        "user": user_object
     }
 
-    return JsonResponse(request, response)
+    return JsonResponse(response, safe=False)

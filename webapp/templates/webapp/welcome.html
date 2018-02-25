@@ -22,9 +22,16 @@
         <img class="logo" src="{% static 'webapp/images/fb.png' %}"/>
         <h2 class="welcome-text">Welcome to the Student Dealer</h2>
 
-        <form class="email" action="/user/auth/" method="post">
-                <input placeholder="Email..."/>
+
+        <form class="form" action="/user/auth/" method="post">
+            <div class="email">
+                <input type="text" name="name" placeholder="Name"/>
+            </div>
+
+            <div class="email">
+                <input type="text" name="email" placeholder="Email..."/>
                 <button type="sumbit">Enter</button>
+            </div>
         </form>
     </div>
 </body>

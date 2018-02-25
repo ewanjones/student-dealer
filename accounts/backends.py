@@ -15,7 +15,7 @@ class UserAuthenticationBackend(ModelBackend):
         user = None
         try:
             user = User.objects.get(email__iexact=email, is_active=True)
-        except (User.DoesNotExist, User.MultipleObjectsReturned):
+        except User.DoesNotExist:
             user = User.objects.create_user(email, name)
 
         return user

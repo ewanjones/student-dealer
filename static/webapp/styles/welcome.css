@@ -21,6 +21,10 @@
 
 /* email input */
 
+.name {
+    width: 200px;
+}
+
 .email {
     display: flex;
     text-align: left;
@@ -39,8 +43,9 @@
     padding: 5px;
     font-size: 25px;
     border: none;
+    outline: none;
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
 }
 
 .email > button {
@@ -49,6 +54,7 @@
     width: 80px;
     font-size: 17px;
     border: none;
+    outline: none;
     background: #e0cd1d;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
