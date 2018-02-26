@@ -25,12 +25,14 @@ psql
 # API
 The backend api can be found at /api. This is where the backend interacts with the databases.
 
-### /api/businesses
+### /api/business
 This endpoint returns a list of businesses in the form:
 
 **Output**
+*GET /api/business/*
 ```
 {
+    "status": "success"
     "items": [
         {
             "id":
@@ -45,15 +47,84 @@ This endpoint returns a list of businesses in the form:
 }
 ```
 
-### /auth/
+*GET /api/business/?bid=<business_id>*
+This won't be fully functioning until we have businesses
+```
+{
+    "status": "success"
+    "business": {
+            "id":
+            "name":
+            "area":
+            "address":
+            "business_type":
+            "description":
+            "url":
+    }
+}
+```
+
+### /api/deal
+This endpoint returns a list of deals in the form:
+
+**Output**
+*GET /api/deal/*
+```
+{
+    "status": "success"
+    "items": [
+        {
+            "id":
+            "name":
+            "area":
+            "address":
+            "business_type":
+            "description":
+            "url":
+        }
+    ]
+}
+```
+
+*GET /api/deal/?did=<deal_id>*
+This won't be fully functioning until we have deals
+```
+{
+    "status": "success"
+    "business": {
+            "id":
+            "name":
+            "area":
+            "address":
+            "business_type":
+            "description":
+            "url":
+    }
+}
+```
+
+### /user/auth
 Users are only authenticated with email.
 Please cache this user to allow them to continue to use the site/app
-**CSRF cookies will need be implemented soon!**
+
+- *CSRF cookies will need to be implemented soon!*
+- *Google reCAPTCHA?*
 
 **Input**
 ```
 {
-    email:
-    name:
+    "email":
+    "name":
+}
+```
+
+**Output**
+```
+{
+    "status": "success"
+    "user": {
+        "name":
+        "email":
+    }
 }
 ```

@@ -16,12 +16,11 @@ from django.contrib.auth import authenticate
 #
 #     return ip
 
-
-def auth_user(request):
-    email = request.POST.get('email')
-    name = request.POST.get('name')
-
-    # get user object
+def auth_user(name, email):
+    '''
+    This is the core function - it is used here for the API and in webapp.views for a redirect endpoint
+    '''
+    # get user from database
     user = authenticate(email=email, name=name)
     login(request, user)
 
@@ -30,9 +29,22 @@ def auth_user(request):
         "email": user.email
     }
 
+    return user_object
+
+
+def ajax_auth(request):
+    '''
+    /user/auth/
+    '''
+
+    email = request.POST.get('email')
+    name = request.POST.get('name')
+
+    user = auth_user(name, email)
+
     response = {
         "status": "success",
-        "user": user_object
+        "user": user
     }
 
     return JsonResponse(response, safe=False)
