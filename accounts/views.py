@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 
 from accounts.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 
 # not a public method!
@@ -16,7 +16,7 @@ from django.contrib.auth import authenticate
 #
 #     return ip
 
-def auth_user(name, email):
+def auth_user(request, name, email):
     '''
     This is the core function - it is used here for the API and in webapp.views for a redirect endpoint
     '''
@@ -40,7 +40,7 @@ def ajax_auth(request):
     email = request.POST.get('email')
     name = request.POST.get('name')
 
-    user = auth_user(name, email)
+    user = auth_user(request, name, email)
 
     response = {
         "status": "success",
