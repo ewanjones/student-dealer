@@ -27,7 +27,6 @@ ssh root@178.62.17.227
 cd webapps/student-dealer/
 git pull
 systemctl restart gunicorn.socket
-service nginx restart
 ```
 
 
