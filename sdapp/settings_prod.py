@@ -9,10 +9,10 @@ DEBUG = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'student-dealer',
+        'NAME': 'studentdealer',
 	'HOST': '',
         'USER': 'postgres',
-        'PASSWORD': 'SD14dealer',
+	'PASSWORD': 'SD14dealer'
     }
 }
 
@@ -35,5 +35,6 @@ LOGGING = {
     },
 }
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sdapp.settings_prod')
