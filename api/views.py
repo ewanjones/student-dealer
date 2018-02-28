@@ -21,12 +21,12 @@ class BusinessView(View):
             return JsonResponse({
                 'status': 'success',
                 'business': {
-                    "id": business.id
-                    "name": business.name
-                    "area": business.area
-                    "address": business.address
-                    "business_type": business.type
-                    "description": business.description
+                    "id": business.id,
+                    "name": business.name,
+                    "area": business.area,
+                    "address": business.address,
+                    "business_type": business.type,
+                    "description": business.description,
                     "url": business.url
                 }
             })
@@ -67,12 +67,12 @@ class DealView(View):
             return JsonResponse({
                 'status': 'success',
                 'deal': {
-                    "id": deal.id
-                    "name": deal.name
-                    "area": deal.area
-                    "address": deal.address
-                    "business_type": deal.type
-                    "description": deal.description
+                    "id": deal.id,
+                    "name": deal.name,
+                    "area": deal.area,
+                    "address": deal.address,
+                    "business_type": deal.type,
+                    "description": deal.description,
                     "url": deal.url
                 }
             })

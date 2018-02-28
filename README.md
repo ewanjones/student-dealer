@@ -21,6 +21,15 @@ Then start postgre with
 psql
 ```
 
+### Deployment
+```
+ssh root@178.62.17.227
+cd webapps/student-dealer/
+git pull
+systemctl restart gunicorn.socket
+service nginx restart
+```
+
 
 # API
 The backend api can be found at /api. This is where the backend interacts with the databases.
