@@ -8,3 +8,9 @@ def index(request):
 
 def welcome(request):
     return render(request, 'webapp/welcome.html')
+
+def deals(request):
+    return render(request, 'webapp/deals.html')
+
+def businesses(request):
+    return render(request, 'webapp/businesses.html')

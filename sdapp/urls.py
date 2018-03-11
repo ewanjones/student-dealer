@@ -5,5 +5,5 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url('api/', include('api.urls')),
     url('user/', include('accounts.urls')),
-    url('', include('webapp.urls'))
+    url('', include('webapp.urls', namespace='webapp'))
 ]

@@ -77,4 +77,5 @@ if [ -n "${BASH-}" ] || [ -n "${ZSH_VERSION-}" ] ; then
     hash -r 2>/dev/null
 fi
 
-export PYTHONPATH='/root/webapps/student-dealer:$PYTHONPATH
+export PYTHONPATH='/root/webapps/student-dealer:$PYTHONPATH;
+

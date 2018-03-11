@@ -21,8 +21,18 @@
 
     <div class="header">
         <div class="nav-item">
-            <a href="">
+            <a href="{% url 'webapp:index' %}">
                 Home
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'webapp:deals' %}">
+                Deals
+            </a>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'webapp:businesses' %}">
+                Businesses
             </a>
         </div>
     </div>
