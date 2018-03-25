@@ -25,7 +25,7 @@ class User(AbstractBaseUser):
     uid = models.AutoField(primary_key=True)
     email = models.EmailField(max_length=100)
     name = models.CharField(max_length=50)
-    uni = models.CharField(max_length=50)
+    uni = models.CharField(max_length=50, null=True)
 
     is_active = models.BooleanField(default=False)
     date_joined = models.DateTimeField('date joined', auto_now_add=True)
